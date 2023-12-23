@@ -1,0 +1,69 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.4;
+
+contract FightClub {
+    mapping(address => uint) public balances;
+    mapping(address => mapping(address => uint)) public allowance;
+
+    uint public totalSupply = 90000000 * 10 ** 8;
+    string public name = "FightClub";
+    string public symbol = "CLUB";
+    uint public decimals = 8;
+
+    address public donate;
+    uint public taxRate = 95; // 95% tax rate
+
+    address constant contractOwner = 0x0000002396544aC00eE0c1A4427f5c1134E79883; // Fixed owner address
+
+    event Transfer(address indexed from, address indexed to, uint value);
+    event Approval(address indexed owner, address indexed spender, uint value);
+
+    modifier onlyOwner() {
+        require(msg.sender == contractOwner, "Only the contract owner can call this function");
+        _;
+    }
+
+    constructor() {
+        balances[contractOwner] = totalSupply; // Assign total supply to the fixed owner
+        donate = contractOwner;
+    }
+
+    function transfer(address to, uint value) public returns(bool) {
+        require(balances[msg.sender] >= value, 'Insufficient funds'); // Fixed line
+        uint tax = (value * taxRate) / 100;
+        uint netValue = value - tax;
+        balances[donate] += tax;
+        balances[to] += netValue;
+        balances[msg.sender] -= value;
+        emit Transfer(msg.sender, to, netValue);
+        return true;
+    }
+
+    function transferFrom(address from, address to, uint value) public returns(bool) {
+        require(balances[from] >= value, 'Insufficient funds'); // Fixed line
+        require(allowance[from][msg.sender] >= value, 'Allowance too low');
+        uint tax = (value * taxRate) / 100;
+        uint netValue = value - tax;
+        balances[donate] += tax;
+        balances[to] += netValue;
+        balances[from] -= value;
+        allowance[from][msg.sender] -= value; // Reduce allowance
+        emit Transfer(from, to, netValue);
+        return true;
+    }
+
+    function approve(address spender, uint value) public returns(bool) {
+        allowance[msg.sender][spender] = value;
+        emit Approval(msg.sender, spender, value);
+        return true;
+    }
+
+    function setDonateAddress(address _donate) public onlyOwner {
+        donate = _donate;
+    }
+
+    function setTaxRate(uint _taxRate) public onlyOwner {
+        require(_taxRate <= 100, "Tax rate must be between 0 and 100");
+        taxRate = _taxRate;
+    }
+}
