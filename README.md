@@ -1,8 +1,9 @@
-FightClub_DAO Project
+FightClub DAO 
+
 Introduction
 Welcome to the FightClub_DAO Project! Inspired by the innovative spirit of the iconic movie, our project is a groundbreaking endeavor in the blockchain space. We're not just a DAO; we're a movement committed to reshaping the landscape of decentralized finance and governance across multiple blockchains.
 
-About FightClub_DAO
+About FightClub DAO
 FightClub_DAO is an omnichain project meticulously designed to function seamlessly on StarkNet, zkSync, and Ethereum. Our focus is on leveraging the unique strengths of each platform to create a robust, scalable, and interoperable ecosystem.
 
 Key Features:
@@ -10,7 +11,7 @@ Omnichain Architecture: Operates across StarkNet, zkSync, and Ethereum, ensuring
 Decentralized Governance: True to the DAO spirit, we emphasize decentralized decision-making, empowering our community members.
 Innovative Solutions: Committed to pushing the boundaries in DeFi and DAO operations with cutting-edge technology and creative approaches.
 Getting Started
-To get involved with FightClub_DAO:
+To get involved with FightClub DAO:
 
 Explore Our Codebase: Clone the repository and explore our smart contracts and integration layers.
 Join Our Community: Participate in discussions, propose ideas, and collaborate with members worldwide.
