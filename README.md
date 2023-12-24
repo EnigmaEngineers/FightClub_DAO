@@ -1,4 +1,4 @@
-FightClub DAO 
+#FightClub DAO 
 
 Introduction
 Welcome to the FightClub_DAO Project! Inspired by the innovative spirit of the iconic movie, our project is a groundbreaking endeavor in the blockchain space. We're not just a DAO; we're a movement committed to reshaping the landscape of decentralized finance and governance across multiple blockchains.
