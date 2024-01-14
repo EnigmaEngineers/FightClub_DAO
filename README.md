@@ -1,5 +1,5 @@
 # FightClub DAO 🥊
-![DAO Banner]([https://i.ibb.co/7yp79zh/NVIDIA-Share-XHZo-LGPaq-P.png](https://github.com/EnigmaEngineers/FightClub_DAO/blob/main/DAO1.jpg?raw=true))
+![DAO Banner](https://github.com/EnigmaEngineers/FightClub_DAO/blob/main/DAO1.jpg?raw=true)
 
 ## Introduction 
 Welcome to the FightClub_DAO Project! Inspired by the innovative spirit of the iconic movie, our project is a groundbreaking endeavor in the blockchain space. We're not just a DAO; we're a movement committed to reshaping the landscape of decentralized finance and governance across multiple blockchains. 🌐
